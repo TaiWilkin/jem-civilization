@@ -121,3 +121,7 @@ export const endTurn = ({ people, food, housing, message, peopleAvailable, goods
       message: message });
   }
 }
+
+export const newGame = () => ({
+  type: 'CLEAR_STORED_STATE'
+})

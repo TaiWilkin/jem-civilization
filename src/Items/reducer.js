@@ -28,6 +28,10 @@ const INITIAL_STATE: stateType = {
 
 const reducer = (state: Object = INITIAL_STATE, action: Object): stateType => {
   switch(action.type) {
+    case 'LOAD_STORED_STATE':
+      return action.storedState.game;
+    case 'CLEAR_STORED_STATE':
+        return INITIAL_STATE;
     case 'end_turn':
     return {
       ...state,

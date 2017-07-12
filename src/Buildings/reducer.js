@@ -30,6 +30,10 @@ const INITIAL_STATE: stateType = {
 
 const reducer = (state: Object = INITIAL_STATE, action: Object): stateType => {
   switch(action.type) {
+    case 'LOAD_STORED_STATE':
+      return action.storedState.buildings;
+    case 'CLEAR_STORED_STATE':
+      return INITIAL_STATE;
     case 'research_buildings':
       return {
         ...state,

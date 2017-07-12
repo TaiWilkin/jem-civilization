@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { endTurn } from './Items/actions';
+import { endTurn, newGame } from './Items/actions';
 
 class EndTurn extends React.PureComponent {
 
@@ -14,7 +14,10 @@ class EndTurn extends React.PureComponent {
       message
     } = this.props;
     return (
+      <div>
         <button onClick={() => this.props.endTurn({ people, food, housing, message, peopleAvailable, goods })}>End Turn</button>
+        <button onClick={() => this.props.newGame()}>New Game</button>
+      </div>
     );
   }
 }
@@ -37,4 +40,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { endTurn })(EndTurn);
+export default connect(mapStateToProps, { endTurn, newGame })(EndTurn);
