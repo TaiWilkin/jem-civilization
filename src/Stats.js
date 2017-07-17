@@ -30,13 +30,8 @@ class Stats extends React.PureComponent {
     } = this.props;
     return (
       <div>
-        <p>{message}</p>
-        <p>Year: {turn}</p>
-        <p>Gold: {gold}</p>
-        <p>Food: {food}</p>
-        <p>Land: {land}</p>
-        <p>Housing: {housing}</p>
-        <p>Research points: {research}</p>
+        <p className="message">{message}</p>
+      <div className="left">
         <p>Goods</p>
         <ul>
           {Object.keys(goods).map((good, i) => this.renderGood(goods[good], i))}
@@ -46,6 +41,15 @@ class Stats extends React.PureComponent {
           {Object.keys(jobs).map((job, i) => this.renderJob(jobs[job], i))}
           <li>TOTAL: {peopleAvailable}/{people}</li>
         </ul>
+      </div>
+      <div className="right">
+      <p>Year: {turn}</p>
+      <p>Gold: {gold}</p>
+      <p>Food: {food}</p>
+      <p>Land: {land}</p>
+      <p>Housing: {housing}</p>
+      <p>Research points: {research}</p>
+    </div>
       </div>
     );
   }

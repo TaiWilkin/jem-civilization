@@ -14,11 +14,13 @@ class App extends Component {
         <Provider store={store}>
       <div>
           <h2>Welcome to Jem's Civilization</h2>
-          <ToggleInfo />
-          <Stats />
+          <div>
           <Choices />
           <Research />
+        </div>
+          <Stats />
           <EndTurn />
+          <ToggleInfo />
       </div>
         </Provider>
     );

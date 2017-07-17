@@ -12,7 +12,7 @@ class ActionButton extends React.PureComponent {
     return (
       <div>
         <input type="number" onChange={({ target }) => this.setState({ quantity: target.value })} value={quantity} />
-        <button onClick={() => action({ peopleAvailable, worker, quantity })}>{name}</button>
+        <button onClick={() => action({ peopleAvailable, worker, quantity: parseInt(quantity, 10) })}>{name}</button>
       </div>
     )
   }

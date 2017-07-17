@@ -152,3 +152,20 @@ export const trade = ({ goodType, goods }) => {
     }
   }
 }
+
+export const buy = ({ quantity, gold }) => {
+  return (dispatch) => {
+    if (gold < quantity) {
+      dispatch({
+        type: 'message',
+        message: `You don't have ${quantity} gold to spend.`
+      });
+    } else {
+      dispatch({
+        type: 'buy',
+        quantity,
+        message: "You traded gold for food."
+      });
+    }
+  }
+}

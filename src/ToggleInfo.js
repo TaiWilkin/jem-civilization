@@ -1,8 +1,9 @@
 import React from 'react';
+import { welcomeMessage } from './Items/constants';
 
 class ToggleInfo extends React.PureComponent {
   state = {
-    tab: 'jobs'
+    tab: 'intro'
   }
 
   render() {
@@ -33,6 +34,7 @@ class ToggleInfo extends React.PureComponent {
          <li>science: first time researched, allows you to begin training traders, who negotiate lower costs for land. Additional research increases points earned by scientists by 1 point. </li>
     </ul>
   </div> : <button onClick={() => this.setState({ tab: 'research' })}>Research</button>}
+  {this.state.tab === 'intro' ? <p>{welcomeMessage}</p> : <button onClick={() => this.setState({ tab: 'intro' })}>Message</button>}
       </div>
     )
   }

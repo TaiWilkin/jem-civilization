@@ -16,7 +16,7 @@ class BuildButton extends React.PureComponent {
         <select onChange={({ target }) => this.setState({ buildingType: target.value })} value={buildingType}>
           {availableBuildings.map((type, i) => <option value={type} key={i}>{type}</option>)}
         </select>
-        <button onClick={() => build({ housing, land, buildingType, quantity, peopleAvailable, workers, goods, gold })}>Build</button>
+        <button onClick={() => build({ housing, land, buildingType, quantity: parseInt(quantity, 10), peopleAvailable, workers, goods, gold })}>Build</button>
       </div>
     )
   }

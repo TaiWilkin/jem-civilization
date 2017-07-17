@@ -14,9 +14,9 @@ class SellButton extends React.PureComponent {
       <div>
         <input type="number" onChange={({ target }) => this.setState({ quantity: target.value })} value={quantity} />
         <select onChange={({ target }) => this.setState({ goodType: target.value })} value={goodType}>
-          {availableGoods.map((type, i) => <option value={type} key={i}>{type}</option>)}
+          {availableGoods.map((type, i) => <option value={type} key={i}>{type} ({goods[type].price} gold each)</option>)}
         </select>
-        <button onClick={() => sell({ goodType, quantity, goods })}>Sell</button>
+        <button onClick={() => sell({ goodType, quantity: parseInt(quantity, 10), goods })}>Sell</button>
       </div>
     )
   }

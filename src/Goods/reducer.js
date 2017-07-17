@@ -16,15 +16,15 @@ const INITIAL_STATE: stateType = {
     offers: 5,
     known: true
   },
-  carving: {
-    name: 'carving',
+  wood: {
+    name: 'wood',
     quantity: 0,
     price: 4,
     offers: 5,
     known: false
   },
-  masonry: {
-    name: 'masonry',
+  stone: {
+    name: 'stone',
     quantity: 0,
     price: 6,
     offers: 5,

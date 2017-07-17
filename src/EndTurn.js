@@ -15,7 +15,7 @@ class EndTurn extends React.PureComponent {
     } = this.props;
     return (
       <div>
-        <button onClick={() => this.props.endTurn({ people, food, housing, message, peopleAvailable, goods })}>End Turn</button>
+        <button className="end" onClick={() => this.props.endTurn({ people, food, housing, message, peopleAvailable, goods })}>End Turn</button>
         <button onClick={() => this.props.newGame()}>New Game</button>
       </div>
     );

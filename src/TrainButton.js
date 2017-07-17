@@ -16,7 +16,7 @@ class TrainButton extends React.PureComponent {
         <select onChange={({ target }) => this.setState({ jobType: target.value })} value={jobType}>
           {availableJobs.map((type, i) => <option value={type} key={i}>{type}</option>)}
         </select>
-        <button onClick={() => train({ jobType, quantity, peopleAvailable, people, jobs })}>Train</button>
+        <button onClick={() => train({ jobType, quantity: parseInt(quantity, 10), peopleAvailable, people, jobs })}>Train</button>
       </div>
     )
   }

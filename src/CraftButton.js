@@ -16,7 +16,7 @@ class CraftButton extends React.PureComponent {
         <select onChange={({ target }) => this.setState({ goodType: target.value })} value={goodType}>
           {availableGoods.map((type, i) => <option value={type} key={i}>{type}</option>)}
         </select>
-        <button onClick={() => craft({ goodType, quantity, peopleAvailable, worker })}>Craft</button>
+        <button onClick={() => craft({ goodType, quantity: parseInt(quantity, 10), peopleAvailable, worker })}>Craft</button>
       </div>
     )
   }

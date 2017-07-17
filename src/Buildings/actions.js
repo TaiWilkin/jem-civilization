@@ -69,6 +69,7 @@ export const build = ({ housing, land, buildingType, quantity, peopleAvailable, 
           message: "You don't have enough unassigned workers for this action."
         });
       } else if (building.type !== "hut" && (!goods[building.goods].quantity < 1 || building.cost > gold)) {
+        console.log(goods[building.goods].quantity, building.cost, gold)
         dispatch({ type: 'message',
           message: `This type of building costs ${building.cost} gold and 1 ${building.goods} to build.`
         });

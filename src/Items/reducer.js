@@ -18,7 +18,7 @@ const INITIAL_STATE: stateType = {
   people: 2,
   peopleAvailable: 2,
   food: 40,
-  research: 20,
+  research: 0,
   land: 5,
   housing: 0,
   gold: 0,
@@ -135,6 +135,13 @@ const reducer = (state: Object = INITIAL_STATE, action: Object): stateType => {
           ...state,
           land: state.land + 1,
           message: action.message
+        }
+        case 'buy':
+        return {
+          ...state,
+          gold: state.gold - action.quantity,
+          message: action.message,
+          food: state.food + (action.quantity * 10)
         }
     default:
     return state;

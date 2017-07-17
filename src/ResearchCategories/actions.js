@@ -3,6 +3,7 @@ export const researchSomething = ({ research, category, researchCategories }) =>
   return (dispatch, getState) => {
     const categoryObject = researchCategories[category];
     const { level, cost } = categoryObject;
+    let message;
     if (cost > research) {
       dispatch({
         type: 'message',
@@ -24,13 +25,13 @@ export const researchSomething = ({ research, category, researchCategories }) =>
           dispatch({
             type: 'research_goods',
             cost,
-            good: 'carving'
+            good: 'wood'
           })
         } else if (level === 2) {
           dispatch({
             type: 'research_goods',
             cost,
-            good: 'masonry'
+            good: 'stone'
           })
         } else if (level === 3) {
           dispatch({
@@ -56,10 +57,15 @@ export const researchSomething = ({ research, category, researchCategories }) =>
         })
         break;
         case 'science':
+        if (level === 0) {
+          message = 'You researched science for the first time. Now you have access to a trader.';
+        } else {
+          message = 'You researched science. Now your scientists earn an additional research point when they work.'
+        }
         dispatch({
           type: 'research_science',
           cost,
-          message: 'You researched science. Now your scientists earn an additional research point when they work.'
+          message
         });
         break;
         case 'buildings':

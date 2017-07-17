@@ -1,21 +1,21 @@
 import React from 'react';
 
-class ResearchButton extends React.PureComponent {
+class BuyFoodButton extends React.PureComponent {
   state = {
     quantity: 1
   }
 
   render() {
-    const { peopleAvailable, research, scientist } = this.props;
+    const { action, gold } = this.props;
     const { quantity } = this.state;
 
     return (
       <div>
         <input type="number" onChange={({ target }) => this.setState({ quantity: target.value })} value={quantity} />
-        <button onClick={() => research({ peopleAvailable, scientist, quantity: parseInt(quantity, 10) })}>Research</button>
+        <button onClick={() => action({ quantity: parseInt(quantity, 10), gold })}>Buy 10 Food with 1 Gold</button>
       </div>
     )
   }
 }
 
-export default ResearchButton;
+export default BuyFoodButton;
